@@ -10,13 +10,13 @@ app.post('/login', (req, res) => {
     })
 });
 
-app.post("/profile", verifyToken,(req,res) => {
-    jwt.verify(req.token,secretKey ,(err,authData) =>{
-        if(err){
-            res.send({result :"invalid Token"});
-        }else {
-            res.json({message: "user is verify" ,authData});
-            
+app.post("/profile", verifyToken, (req, res) => {
+    jwt.verify(req.token, secretKey, (err, authData) => {
+        if (err) {
+            res.send({ result: "invalid Token" });
+        } else {
+            res.json({ message: "user is verify", authData });
+
         }
     })
 })
